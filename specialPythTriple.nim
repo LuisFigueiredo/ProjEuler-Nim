@@ -12,15 +12,7 @@
 # c = p^2 + q^2
 # p and q with p > q, no common divisors and cannot both be odd
 
-
-import times, os, strutils
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
+import libs/benchmark, strutils
 
 proc gcd(n1, n2: int): int =
   var
@@ -42,7 +34,7 @@ var sum: int = 1000
 benchmark "runtime": 
   for p in 1..20:
     for q in 1..p-1:
-      #if((relPrime(p, q)) and ((p mod 2 == 0) or q mod 2 == 0)):
+      if((relPrime(p, q)) and ((p mod 2 == 0) or q mod 2 == 0)):
         let a = p*p - q*q
         let b = 2 * p * q
         let c = p*p + q*q

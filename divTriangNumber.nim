@@ -14,14 +14,7 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 # What is the value of the first triangle number to have over five hundred divisors?
 
-import times, os, strutils, math
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
+import libs/benchmark, math, strutils
 
 iterator isoe_upto(top: uint): uint =
   let topndx = int((top - 3) div 2)
@@ -40,18 +33,15 @@ iterator isoe_upto(top: uint): uint =
 proc divisors (n: int): int =
   var count: int = 0;
   let lim: int = int(sqrt(float n)) + 1
-
   for i in 1..<lim:
     if n mod i == 0:
       inc(count)
-
   return (2 * count)
 
 
 var
   i: int = 1
   t: int = 0
-
 benchmark "runtime":
   while true:
     t += i

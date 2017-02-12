@@ -24,18 +24,9 @@
 # The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
-
-import times, os, strutils, math
-
+import libs/benchmark, strutils, math
 
 type Matrix[M,N: static[int]] = array[M, array[N, int]]
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
 
 const
   w: int = 20

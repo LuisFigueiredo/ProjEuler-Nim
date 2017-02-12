@@ -8,15 +8,7 @@
 # ...
 # 53503534226472524250874054075591789781264330331690
 
-import times, os, strutils, bigints
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
-
+import libs/benchmark, strutils, bigints, os
 
 if not existsFile "numbers.txt":
   echo "Problem reading the 'numbers.txt' file"

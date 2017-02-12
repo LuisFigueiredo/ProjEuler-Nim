@@ -2,15 +2,18 @@
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+import libs/benchmark, strutils
+
 var
   sum: int = 0
   fib = [1,1,2]
 
-while fib[2] <= 4_000_000:
-  if (fib[2] mod 2 == 0):
-    sum += fib[2]
-  fib[0] = fib[1]
-  fib[1] = fib[2]
-  fib[2] = fib[0] + fib[1]
+benchmark "runtime":
+  while fib[2] <= 4_000_000:
+    if (fib[2] mod 2 == 0):
+      sum += fib[2]
+    fib[0] = fib[1]
+    fib[1] = fib[2]
+    fib[2] = fib[0] + fib[1]
 
-echo "Result: " & repr(sum)
+  echo "Result: " & repr(sum)

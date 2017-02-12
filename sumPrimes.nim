@@ -1,14 +1,7 @@
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 # Find the sum of all the primes below two million.
 
-import times, os, strutils, math
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
+import libs/benchmark, strutils, math
 
 iterator isoe_upto(top: uint): uint =
     let topndx = int((top - 3) div 2)

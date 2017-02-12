@@ -9,15 +9,7 @@
 # Which starting number, under one million, produces the longest chain?
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
-import times, os, strutils
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
-
+import libs/benchmark, strutils
 
 const limit = 1_000_000
 var

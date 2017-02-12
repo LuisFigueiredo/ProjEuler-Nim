@@ -1,14 +1,7 @@
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 # What is the 10 001st prime number?
 
-import times, os, strutils, math, sequtils
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
+import libs/benchmark, strutils, math, sequtils
 
 iterator isoe_upto(top: uint): uint =
     let topndx = int((top - 3) div 2)

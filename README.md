@@ -18,10 +18,10 @@ Solving [Project Euler](https://projecteuler.net) problems (in a somewhat optimi
 - [x] [15 Lattice paths](latticePaths.nim)
 - [x] [16 Power digit sum](powDigSum.nim)
 - [x] [17 Number letter counts](nLetterCounts.nim)
-- [ ] 18 Maximum path sum I
-- [ ] 19 Counting Sundays
-- [ ] 20 Factorial digit sum
-- [ ] 21 Amicable numbers
+- [x] [18 Maximum path sum I](trianglePathSim.nim)
+- [x] [19 Counting Sundays](countSundays.nim)
+- [x] [20 Factorial digit sum](factDigSum.nim)
+- [x] [21 Amicable numbers](amicableNumbers.nim)
 - [ ] 22 Names scores
 - [ ] 23 Non-abundant sums
 - [ ] 24 Lexicographic permutations

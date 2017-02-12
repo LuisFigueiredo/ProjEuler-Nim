@@ -1,7 +1,7 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
 
-import strutils, math, sequtils, times
+import libs/benchmark, strutils, math, sequtils, times
  
 proc getStep(n: int64) : int64 {.inline.} =
   result = 1 + n*4 - int64(n /% 2)*2
@@ -22,5 +22,6 @@ proc primeFac(n: int64): seq[int64] =
     res.add(n)    
   result = res
 
-var f = primeFac(600851475143)
-echo f
+benchmark "runtime":
+  var f = primeFac(600851475143)
+  echo f

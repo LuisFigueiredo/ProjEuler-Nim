@@ -1,7 +1,7 @@
 # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-import sequtils, times, os
+import libs/benchmark, strutils, sequtils
 
 proc detectPalindrome(num: int): bool =
   var x:int = num
@@ -23,16 +23,13 @@ proc detectPalindrome(num: int): bool =
     dv = dv div 100
   result = true
 
-let t0 = cpuTime()
+benchmark "runtime":
+  var pal: seq[int] = @[]
+  for i in 100..999:
+    for j in 100..999:
+      let res: int = i*j
+      if detectPalindrome(res):
+        pal.add(res)
 
-var pal: seq[int] = @[]
-for i in 100..999:
-  for j in 100..999:
-    let res: int = i*j
-    if detectPalindrome(res):
-      pal.add(res)
-
-#pal = pal.deduplicate()
-echo "Result => ", max(pal)
-
-echo "Runtime => ", cpuTime() - t0, "s"
+  pal = pal.deduplicate()
+  echo "Result => ", max(pal)

@@ -2,15 +2,7 @@
 # If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
 # NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
 
-import times, os, strutils, math, bigints, tables
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = (epochTime() - t0)*1000
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 4)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, " ms"
-
+import libs/benchmark, strutils, math, bigints, tables
 
 var trans = {0: 0, 1: 3, 2: 3, 3: 5, 4: 4, 5: 4, 6: 3, 7: 5, 8: 5, 9: 4, 10: 3, 11: 6, 12: 6, 13: 8, 14: 8, 15: 7, 16: 7, 17: 9, 18: 8, 19: 8, 20: 6, 30: 6, 40: 5, 50: 5, 60: 5, 70: 7, 80: 6, 90: 6}.toTable()
 

@@ -1,14 +1,7 @@
 # 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 # What is the sum of the digits of the number 2^1000?
 
-import times, os, strutils, math, bigints
-
-template benchmark(benchmarkName: string, code: typed) =
-  let t0 = epochTime()
-  code
-  let elapsed = epochTime() - t0
-  let elapsedStr = elapsed.formatFloat(format = ffDecimal, precision = 3)
-  echo "CPU Time [", benchmarkName, "] ", elapsedStr, "s"
+import libs/benchmark, strutils, math, bigints
 
 proc sumdigits(n: BigInt, base: BigInt): BigInt =
   var n = n
