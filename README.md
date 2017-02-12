@@ -22,7 +22,7 @@ Solving [Project Euler](https://projecteuler.net) problems (in a somewhat optimi
 - [x] [19 Counting Sundays](countSundays.nim)
 - [x] [20 Factorial digit sum](factDigSum.nim)
 - [x] [21 Amicable numbers](amicableNumbers.nim)
-- [ ] 22 Names scores
+- [x] [22 Names scores](nameScore.nim)
 - [ ] 23 Non-abundant sums
 - [ ] 24 Lexicographic permutations
 - [ ] 25 1000-digit Fibonacci number
