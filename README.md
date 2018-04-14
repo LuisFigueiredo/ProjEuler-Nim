@@ -23,7 +23,7 @@ Solving [Project Euler](https://projecteuler.net) problems (in a somewhat optimi
 - [x] [20 Factorial digit sum](factDigSum.nim)
 - [x] [21 Amicable numbers](amicableNumbers.nim)
 - [x] [22 Names scores](nameScore.nim)
-- [ ] 23 Non-abundant sums
+- [x] [23 Non-abundant sums](nonAbundSums.nim)
 - [ ] 24 Lexicographic permutations
 - [ ] 25 1000-digit Fibonacci number
 - [ ] 26 Reciprocal cycles
