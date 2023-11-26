@@ -3,4 +3,6 @@
 !*.*
 *.exe
 nimcache/
+nimblecache/
+htmldocs/
 nimsuggest.log
